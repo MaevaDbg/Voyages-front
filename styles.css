@@ -15,7 +15,7 @@ header
 	height: 100%;
 	text-align: right;
 }
-h1
+h1,h2
 {
 	font-family: 'Sue Ellen Francisco', cursive;
 	text-transform: uppercase;
@@ -24,6 +24,9 @@ h1
 	padding: 20px 10px;
 	letter-spacing: 4px;
 	color: #504A43;
+}
+h2{
+	font-size: 30px;
 }
 nav
 {
@@ -59,4 +62,14 @@ nav ul li a
 	padding: 0;
 	width: 80%;
 	height:100%;
+}
+#map{
+	display: inline-block;
+	vertical-align: top;
+	width: 80%;
+	height:100%;
+}
+.infobox
+{
+	background: none;
 }
