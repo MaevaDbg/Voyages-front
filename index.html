@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Les voyages</title>
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Sue+Ellen+Francisco' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="styles.css">
     </head>
 
@@ -15,31 +15,87 @@
         <nav>
             <ul>
                 <li>
-                    <a href="">Pays</a>
+                    <a href="" data-cover="img/inde.jpg" >Inde du nord</a>
                 </li>
                 <li>
-                    <a href="">Pays</a>
+                    <a href="" data-cover="img/japon.jpg" >Japon</a>
                 </li>
                 <li>
-                    <a href="">Pays</a>
+                    <a href="" data-cover="img/dubai.jpg" >Emirats arabes unis</a>
                 </li>
                 <li>
-                    <a href="">Pays</a>
+                    <a href="" data-cover="img/amsterdam.jpg" >Pays Bas</a>
                 </li>
                 <li>
-                    <a href="">Pays</a>
+                    <a href="" data-cover="" >Cambodge</a>
                 </li>
             </ul>
         </nav>
-
-    </header>
-
-    <section>
-        
-
-    </section>
+    </header><!-- @whitespace
+--><section id="cover"></section>
     
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        //Fonction preload d'image
+        //(http://ditio.net/2010/02/14/jquery-preload-images-tutorial-and-example/)
+        (function($) {
+            var imgList = [];
+            $.extend({
+                preload: function(imgArr, option) {
+                    var setting = $.extend({
+                        init: function(loaded, total) {},
+                        loaded: function(img, loaded, total) {},
+                        loaded_all: function(loaded, total) {}
+                    }, option);
+                    var total = imgArr.length;
+                    var loaded = 0;
+                    
+                    setting.init(0, total);
+                    for(var i in imgArr) {
+                        imgList.push($("<img />")
+                            .attr("src", imgArr[i])
+                            .load(function() {
+                                loaded++;
+                                setting.loaded(this, loaded, total);
+                                if(loaded == total) {
+                                    setting.loaded_all(loaded, total);
+                                }
+                            })
+                        );
+                    }
+                    
+                }
+            });
+        })(jQuery);
+
+        $(document).ready(function() {
+            //Prechargement des images
+            var ImgArray = new Array();
+            $('li > a').each(function(){
+                var cover = $(this).data('cover');
+                if(cover){
+                    ImgArray.push(cover);
+                }
+                
+            })
+
+            $.preload(ImgArray);
+            
+
+            //la cover du premier pays de ma liste s'affiche directement
+            var firstImg = $('li > a:first').data('cover');
+            $('li > a:first').css('font-weight', 'bold');
+            $('#cover').css('background-image', 'url('+firstImg+')');
+
+            //Au survol des pays les covers correspondant s'affichent
+            $('li > a').mouseover(function(event) {
+                $('li > a').css('font-weight', 'normal');
+                $(this).css('font-weight', 'bold');
+                var img = ($(this).data('cover'));
+                console.log(img);
+                $('#cover').css('background-image', 'url('+img+')');
+            });
+        });
+    </script>
     </body>
 </html>
