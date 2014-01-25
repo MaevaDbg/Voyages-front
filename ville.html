@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Les voyages</title>
+        <link href='http://fonts.googleapis.com/css?family=Sue+Ellen+Francisco' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.14.1/build/cssreset/cssreset-min.css">
+        <link rel="stylesheet" href="fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+    <header>
+
+        <h1><a href="index.html">Les voyages</a></h1>
+        <h2><a href="pays.html">Japon</a></h2>
+        <h3>Vacances au Japon du 1er au 23 juin 2012</h3>
+
+        <nav>
+            <ul id="list-ville">
+                <li>
+                    <a href="ville.html" >Osaka et Ibaraki</a>
+                </li>
+                <li>
+                    <a href="ville.html" >Nara</a>
+                </li>
+                <li>
+                    <a href="ville.html" >Kyoto</a>
+                </li>
+                <li>
+                    <a href="ville.html" >Hiroshima et Miyajima</a>
+                </li>
+                <li>
+                    <a href="ville.html" >Tokyo</a>
+                </li>
+            </ul>
+        </nav>
+
+        <p>
+            <a href="index.html">x Tous les pays x</a>
+        </p>
+
+    </header><!-- @whitespace
+--><section id="ville">
+        <h2>Osaka et Ibaraki</h2>
+
+        <ul>
+            <li><a href="img/P1030008.jpg" class="fancybox" rel="gallery" title="Sample title 1"><img src="img/thumb_P1030008.jpg" alt=""></a></li>
+            <li><a href="img/P1030015.jpg" class="fancybox" rel="gallery" title="Sample title 2"><img src="img/thumb_P1030015.jpg" alt=""></a></li>
+            <li><a href="img/P1030002.jpg" class="fancybox" rel="gallery" title="Sample title 3"><img src="img/thumb_P1030002.jpg" alt=""></a></li>
+        </ul>
+
+        
+    </section>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.fancybox').fancybox();
+        });
+    </script>
+    </body>
+</html>

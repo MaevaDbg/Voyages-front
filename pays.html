@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <title>Les voyages</title>
         <link href='http://fonts.googleapis.com/css?family=Sue+Ellen+Francisco' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.14.1/build/cssreset/cssreset-min.css">
         <link rel="stylesheet" href="styles.css">
     </head>
 
@@ -11,31 +12,38 @@
 
     <header>
 
-        <h1>Les voyages</h1>
+        <h1><a href="index.html">Les voyages</a></h1>
         <h2 data-pays="japon" data-zoom="6">Japon</h2>
+        <h3>Vacances au Japon du 1er au 23 juin 2012</h3>
+
         <nav>
             <ul id="list-ville">
                 <li data-ville="osaka" data-img="img/image.jpg">
-                    <a id="osaka" href="" >Osaka et Ibaraki</a>
+                    <a id="osaka" href="ville.html" >Osaka et Ibaraki</a>
                 </li>
                 <li data-ville="nara" data-img="img/image.jpg">
-                    <a id="nara" href="" >Nara</a>
+                    <a id="nara" href="ville.html" >Nara</a>
                 </li>
                 <li data-ville="kyoto" data-img="img/image.jpg">
-                    <a id="kyoto" href="" >Kyoto</a>
+                    <a id="kyoto" href="ville.html" >Kyoto</a>
                 </li>
                 <li data-ville="hiroshima" data-img="img/image.jpg">
-                    <a id="hiroshima" href="" >Hiroshima et Miyajima</a>
+                    <a id="hiroshima" href="ville.html" >Hiroshima et Miyajima</a>
                 </li>
                 <li data-ville="tokyo" data-img="img/image.jpg">
-                    <a id="tokyo" href="" >Tokyo</a>
+                    <a id="tokyo" href="ville.html" >Tokyo</a>
                 </li>
             </ul>
         </nav>
+
+        <p>
+            <a href="index.html">x Tous les pays x</a>
+        </p>
+
     </header><!-- @whitespace
---><div id="map">
+--><section id="map">
         <p>Veuillez patienter pendant le chargement de la carte...</p>
-    </div>
+    </section>
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
