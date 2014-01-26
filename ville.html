@@ -3,19 +3,19 @@
     <head>
         <meta charset="utf-8" />
         <title>Les voyages</title>
-        <link href='http://fonts.googleapis.com/css?family=Sue+Ellen+Francisco' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Sue+Ellen+Francisco|Source+Sans+Pro' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.14.1/build/cssreset/cssreset-min.css">
         <link rel="stylesheet" href="fancybox/jquery.fancybox.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="styles.css">
     </head>
 
-    <body>
+    <body id="ville">
 
     <header>
 
-        <h1><a href="index.html">Les voyages</a></h1>
+        <h1><a href="index.html"><img src="img/valise.png" alt="logo">Les voyages</a></h1>
         <h2><a href="pays.html">Japon</a></h2>
-        <h3>Vacances au Japon du 1er au 23 juin 2012</h3>
+        <h3>Vacances au Japon du 1er au 23 juin 2012</h3>~
 
         <nav>
             <ul id="list-ville">
@@ -42,13 +42,63 @@
         </p>
 
     </header><!-- @whitespace
---><section id="ville">
-        <h2>Osaka et Ibaraki</h2>
+--><section id="photo">
+
+        <h2><img src="img/direction.png" alt="">Osaka et Ibaraki</h2>
+
+        <p><a id="diapo" href="#"><img src="img/play.png" alt=""> Lancer le diaporama</a></p>
 
         <ul>
-            <li><a href="img/P1030008.jpg" class="fancybox" rel="gallery" title="Sample title 1"><img src="img/thumb_P1030008.jpg" alt=""></a></li>
-            <li><a href="img/P1030015.jpg" class="fancybox" rel="gallery" title="Sample title 2"><img src="img/thumb_P1030015.jpg" alt=""></a></li>
-            <li><a href="img/P1030002.jpg" class="fancybox" rel="gallery" title="Sample title 3"><img src="img/thumb_P1030002.jpg" alt=""></a></li>
+            <li>
+                <a href="img/lorempix_800x600.jpg" class="fancybox" rel="gallery" title="Sample title">
+                    <img src="img/lorempix_150x150.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="img/lorempix_800x600.jpg" class="fancybox" rel="gallery" title="Sample title">
+                    <img src="img/lorempix_150x150.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="img/lorempix_800x600.jpg" class="fancybox" rel="gallery" title="Sample title">
+                    <img src="img/lorempix_150x150.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="img/lorempix_800x600.jpg" class="fancybox" rel="gallery" title="Sample title">
+                    <img src="img/lorempix_150x150.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="img/lorempix_800x600.jpg" class="fancybox" rel="gallery" title="Sample title">
+                    <img src="img/lorempix_150x150.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="img/lorempix_800x600.jpg" class="fancybox" rel="gallery" title="Sample title">
+                    <img src="img/lorempix_150x150.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="img/lorempix_800x600.jpg" class="fancybox" rel="gallery" title="Sample title">
+                    <img src="img/lorempix_150x150.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="img/lorempix_800x600.jpg" class="fancybox" rel="gallery" title="Sample title">
+                    <img src="img/lorempix_150x150.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="img/lorempix_800x600.jpg" class="fancybox" rel="gallery" title="Sample title">
+                    <img src="img/lorempix_150x150.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="img/lorempix_800x600.jpg" class="fancybox" rel="gallery" title="Sample title">
+                    <img src="img/lorempix_150x150.jpg" alt="">
+                </a>
+            </li>
         </ul>
 
         
@@ -56,9 +106,22 @@
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="fancybox/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="fancybox/jquery.mousewheel.pack.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $('.fancybox').fancybox();
+
+            $('#diapo').click(function(event) {
+                /* Act on the event */
+                $('.fancybox').fancybox({
+                    autoPlay: true,
+                    playSpeed: 3000,
+                    afterClose: function(){
+                        $('.fancybox').fancybox();
+                    }
+                });
+                $('.fancybox:first').click();
+            });
         });
     </script>
     </body>
